@@ -5777,7 +5777,7 @@ bool LoadDNGFromMemory(const char* mem, unsigned int size,
         int w = 0, h = 0, components = 0;
 
         // Check if data is in valid range.
-        if ((sr.tell() + data_offset + static_cast<uint32_t>(jpeg_len)) >= sr.size()) {
+        if ((sr.tell() + static_cast<uint32_t>(jpeg_len)) > sr.size()) {
           if (err) {
             (*err) += "Invalid JPEG image data size.\n";
           }
